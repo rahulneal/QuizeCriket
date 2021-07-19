@@ -1,0 +1,49 @@
+var readlineSync = require('readline-sync');
+
+var chalk = require('chalk');
+
+
+var userName = readlineSync.question("what is your name?")
+
+
+console.log("Hey! "+userName+"  welcome to DO YOU KNOW CRICKET?");
+
+var score = 0;
+
+var highScore={
+  high1:"Rahul",
+  score1:"10",
+  high2:"Krishna",
+  score2:"9"
+
+}
+
+function cricket(question,answer){
+
+  var userAns = readlineSync.question(question);
+
+  if(userAns===answer){
+    console.log("Right!");
+    score= score+1;
+  }else{
+    console.log("wrong!");
+    score=score-1;
+  }
+  
+}
+
+var one = cricket("Name of indian captain?\n a dhoni \n b virat \n","b")
+var two = cricket("Which world cup India won?\n a 2011 \n b 2007 \n","a")
+var three = cricket("which player holds the record for highest score in ODI?\n a Cook \n b Rohit \n","b")
+var four = cricket("Which team won 2015 ODI world cup?\n a India \n b Austraila\n","b")
+var five = cricket("Name of england captain?\n a cook \n b Morgan \n","b")
+
+//var criList=[{cricket("Name of indian captain?\n a dhoni \n b virat \n","a")},{cricket("Name of england captain?\n a cook \n b smith \n","a")}];
+var criList=[one,two,three,four,five];
+for(i=0;i<criList.legth;i++){
+console.log(criList(i))
+}
+
+console.log(chalk.blue('Hello '+userName));
+console.log(chalk.blue("Your Score is "+score));
+console.log(chalk.blue("Highest Score " +highScore.high1));
